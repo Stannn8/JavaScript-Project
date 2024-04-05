@@ -1,0 +1,32 @@
+const min = 1;
+const max = 100;
+answer = math.floor (math.random() * (max - min + 1) - min);
+
+let attempts = 0;
+let guess;
+let running = true;
+
+while(running){
+guess = window.prompt("guess a number between ${min} - ${max}");
+guess = number(guess);
+
+if(isNaN(guess)){
+console.log ("enter a valid number);
+}
+else if (guess < 0 || guess > 100 ){
+console.log ("enter a valid number")
+}
+else{
+attempts ++;
+if(guess < answer){
+console.log(" number is too low")
+}
+else if (guess > answer){
+console.log("number is too high")
+}
+else {
+console.log ("congratulations you have guessed the number $(answer) in $(attempts) try")
+running = false
+}
+}
+}
